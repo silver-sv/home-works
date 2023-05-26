@@ -75,3 +75,105 @@ function findUnique(array) {
     return new Set(array).size !== array.length;
 }
  
+// // // // // //  task-3 // // // // // // 
+
+
+const arr1 = [5, 3, 4, 5,6,7,3];
+const sortArr1 = arr1.filter(function(item, pos){
+    return arr1.indexOf(item) == pos;
+})
+console.log(sortArr1);
+
+// 
+
+let arr2 = [2, 9];
+function fa(n) {
+    let createArray = [];
+    for (let i = 2; i <= n; i++)
+    createArray.push(i)
+    return createArray;
+}
+console.log(fa(9));
+   
+// 
+
+let a = 1;
+let b = 5;
+let resArr = [];
+function createArray(a, b) {
+    for(let a = 1; a <=b; a++){
+       for (i = 0; i < a - 1 + 1; i++){
+        resArr.push(a);
+       }
+    }
+    return resArr;
+}
+console.log(resArr);
+
+// 
+
+var randArray = [];
+for ( i = 0; i < 5; i++ ) {
+    randArray.push( Math.round( Math.random() * 499 ) + 1);
+} 
+console.log(randArray);
+
+// 
+
+const  arr3 = [5, "Limit", 12, "a", "3", 99, 2, [2, 4, 3, "33", "a", "text"], "strong", "broun"];
+
+function newArrays (arr3) {
+  const arr4 = [];
+  const arr5 = [];
+
+  const newArr3 = arr3.flat();
+
+  for (const i = 0; i < newArr3.length; i++) {
+    const el = newArr3[i];
+    if(typeof el === "number") {
+        arr4.push(el);
+    }
+    else if (typeof el === "string") {
+        arr5.push(el);
+    }
+  }
+   
+  console.log(arr4);
+  console.log(arr5);
+}
+
+
+// 
+const date = new Date();
+const currentHour = date.getHours();
+
+    if (currentHour >= 23 && currentHour <= 5) {
+        alert ('Доброї ночі');
+    }
+    else if (currentHour >= 5 && currentHour <=11) {
+        alert ('Доброго ранку');
+    }
+    else if (currentHour >= 11 && currentHour <= 17) {
+        alert ('Доброго дня');
+    }
+    else if (currentHour >= 17 && currentHour <= 23) {
+        alert  ('Доброго вечора');
+    }
+ 
+switch(true) {
+    case (currentHour >= 23 && currentHour <= 5):
+        alert ('Доброї ночі');
+        break;
+    case (currentHour > 5 && currentHour <= 11):
+        alert ('Доброго ранку');
+        break;
+    case (currentHour > 11 && currentHour <= 17):
+        alert ('Доброго дня');
+        break
+    case (currentHour > 17 && currentHour <= 23):
+        alert  ('Доброго вечора');     
+        break
+    }
+ 
+
+    // 
