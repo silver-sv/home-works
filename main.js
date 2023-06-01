@@ -1,179 +1,300 @@
-//
-console.log("a" < "b" < "c");
+// //
+// console.log("a" < "b" < "c");
 
-// 
-let x = 1;
-let y = 2;
+// // 
+// let x = 1;
+// let y = 2;
 
-let res1 = "1" + "2";
-console.log(res1);
-console.log(typeof(res1));
+// let res1 = "1" + "2";
+// console.log(res1);
+// console.log(typeof(res1));
 
-let res2 = ("true" + 2);
-console.log( res2);
-console.log(typeof(res2));
+// let res2 = ("true" + 2);
+// console.log( res2);
+// console.log(typeof(res2));
 
-let res3 = 1 < 2;
-console.log (res3);
-console.log(typeof(res3));
+// let res3 = 1 < 2;
+// console.log (res3);
+// console.log(typeof(res3));
 
-let res4 ="x" * 2;
-console.log (res4);
-console.log(typeof(res4));
+// let res4 ="x" * 2;
+// console.log (res4);
+// console.log(typeof(res4));
 
-// 
-let isAdult = prompt("Скільки вам років?"); {
-    if (isAdult >= 18 ) {
-        alert('Ви досягли повнолітнього віку');
-    } else {
-        alert('Ви ще надто молоді');
-    }
-}
-
-// 
-let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
-let data = arr.filter(function(elem, index){
-    return elem !== 5;
-})
-console.log(data);
-
-// for (let elem of arr) {
-//     if (data[elem] === undefined){
-//         data[elem] = 1;
-//     }
-//     else{
-//         data[elem]++;
+// // 
+// let isAdult = prompt("Скільки вам років?"); {
+//     if (isAdult >= 18 ) {
+//         alert('Ви досягли повнолітнього віку');
+//     } else {
+//         alert('Ви ще надто молоді');
 //     }
 // }
+
+// // 
+// let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
+// let data = arr.filter(function(elem, index){
+//     return elem !== 5;
+// })
 // console.log(data);
 
-// 
-const side1 = parseInt(prompt('side1: 3'));
-const side2 = parseInt(prompt('side2: 4'));
-const side3 = parseInt(prompt('side3: 5'));
-const s =(side1 + side2 + side3)/2;
-console.log(s);
+// // for (let elem of arr) {
+// //     if (data[elem] === undefined){
+// //         data[elem] = 1;
+// //     }
+// //     else{
+// //         data[elem]++;
+// //     }
+// // }
+// // console.log(data);
+
+// // 
+// const side1 = parseInt(prompt('side1: 3'));
+// const side2 = parseInt(prompt('side2: 4'));
+// const side3 = parseInt(prompt('side3: 5'));
+// const s =(side1 + side2 + side3)/2;
+// console.log(s);
     
-areaValue = Math.sqrt( s * (s - side1) * (s - side2) * (s - side3) );
-console.log( areaValue);
+// areaValue = Math.sqrt( s * (s - side1) * (s - side2) * (s - side3) );
+// console.log( areaValue);
     
-// 
-function calc(A, B, Op){
-    switch (Op){
-        case 1: return A - B;
-        case 2: return A * B;
-        case 3: return A / B;
-        default: return A + B;
+// // 
+// function calc(A, B, Op){
+//     switch (Op){
+//         case 1: return A - B;
+//         case 2: return A * B;
+//         case 3: return A / B;
+//         default: return A + B;
         
-    }
-}
-console.log(calc(3, 4, 5));
+//     }
+// }
+// console.log(calc(3, 4, 5));
 
-// 
+// // 
 
-function findUnique(array) {
-    return new Set(array).size !== array.length;
-}
+// function findUnique(array) {
+//     return new Set(array).size !== array.length;
+// }
  
-// // // // // //  task-3 // // // // // // 
+// // // // // // //  task-3 // // // // // // 
 
 
-const arr1 = [5, 3, 4, 5,6,7,3];
-const sortArr1 = arr1.filter(function(item, pos){
-    return arr1.indexOf(item) == pos;
-})
-console.log(sortArr1);
+// const arr1 = [5, 3, 4, 5,6,7,3];
+// const sortArr1 = arr1.filter(function(item, pos){
+//     return arr1.indexOf(item) == pos;
+// })
+// console.log(sortArr1);
 
-// 
+// // 
 
-let arr2 = [2, 9];
-function fa(n) {
-    let createArray = [];
-    for (let i = 2; i <= n; i++)
-    createArray.push(i)
-    return createArray;
-}
-console.log(fa(9));
+// let arr2 = [2, 9];
+// function fa(n) {
+//     let createArray = [];
+//     for (let i = 2; i <= n; i++)
+//     createArray.push(i)
+//     return createArray;
+// }
+// console.log(fa(9));
    
-// 
+// // 
 
-let a = 1;
-let b = 5;
-let resArr = [];
-function createArray(a, b) {
-    for(let a = 1; a <=b; a++){
-       for (i = 0; i < a - 1 + 1; i++){
-        resArr.push(a);
+// let a = 1;
+// let b = 5;
+// let resArr = [];
+// function createArray(a, b) {
+//     for(let a = 1; a <=b; a++){
+//        for (i = 0; i < a - 1 + 1; i++){
+//         resArr.push(a);
+//        }
+//     }
+//     return resArr;
+// }
+// console.log(resArr);
+
+// // 
+
+// var randArray = [];
+// for ( i = 0; i < 5; i++ ) {
+//     randArray.push( Math.round( Math.random() * 499 ) + 1);
+// } 
+// console.log(randArray);
+
+// // 
+
+// const  arr3 = [5, "Limit", 12, "a", "3", 99, 2, [2, 4, 3, "33", "a", "text"], "strong", "broun"];
+
+// function newArrays (arr3) {
+//   const arr4 = [];
+//   const arr5 = [];
+
+//   const newArr3 = arr3.flat();
+
+//   for (const i = 0; i < newArr3.length; i++) {
+//     const el = newArr3[i];
+//     if(typeof el === "number") {
+//         arr4.push(el);
+//     }
+//     else if (typeof el === "string") {
+//         arr5.push(el);
+//     }
+//   }
+   
+//   console.log(arr4);
+//   console.log(arr5);
+// }
+
+
+// // 
+// const date = new Date();
+// const currentHour = date.getHours();
+
+//     if (currentHour >= 23 && currentHour <= 5) {
+//         alert ('Доброї ночі');
+//     }
+//     else if (currentHour >= 5 && currentHour <=11) {
+//         alert ('Доброго ранку');
+//     }
+//     else if (currentHour >= 11 && currentHour <= 17) {
+//         alert ('Доброго дня');
+//     }
+//     else if (currentHour >= 17 && currentHour <= 23) {
+//         alert  ('Доброго вечора');
+//     }
+ 
+// switch(true) {
+//     case (currentHour >= 23 && currentHour <= 5):
+//         alert ('Доброї ночі');
+//         break;
+//     case (currentHour > 5 && currentHour <= 11):
+//         alert ('Доброго ранку');
+//         break;
+//     case (currentHour > 11 && currentHour <= 17):
+//         alert ('Доброго дня');
+//         break
+//     case (currentHour > 17 && currentHour <= 23):
+//         alert  ('Доброго вечора');     
+//         break
+//     }
+ 
+
+    // // // // // // //  task-4 // // // // // //
+
+
+    function sumSliceArray(arr, first, second){
+        try{
+          if (!(typeof first == 'number') || !(typeof second == 'number')) {
+              throw new Error ("not a number");
+          }
+          else if(first > arr.length || second > arr.length){
+              throw new RangeError("Numbers from arguments are bigger then array length");
+          }
+          else{
+              console.log(arr[first] + arr[second]);
+          }
+        }
+        catch (error){
+          console.log(error.stack);
+        }
+          
+      }
+       sumSliceArray([1, 3, 5] , "ab", 3);
+      // 
+  
+  
+      let userName = prompt("Enter your name");
+      let userAge = parseInt(prompt("Enter your age"));
+      let userStatus = prompt("Enter your status (admin, moderator, user)");
+      
+      function checkAge (userName, userAge, userStatus){
+          try{
+              if (isNaN(userAge)){
+                  throw new TypeError("Invalid age. You entered not a number is age field");
+              }
+              else if (userName === "" || userAge === 0 || userStatus === ""){
+                  throw new Error("The field is empty! Enter necessary informat");
+              }
+              else if (userStatus !== "admin" && userStatus !== "moderator" && userStatus !== "user"){
+                  throw new EvalError("Invalid status. Enter valid status (admin, moderator, user)");
+              }
+              else if (userAge < 18 || userAge >70){
+                  throw new RangeError("Your age is out of range");
+              }
+              else {
+                  alert("You can continue watching film");
+              }
+           }
+           catch (error){
+              console.log(error.stack);
+           }
+      } 
+       checkAge(userAge, userName, userStatus);
+      
+         
+  //    
+  
+     function calcRectangleArea(width, height){
+      try{
+          if (typeof width !== "number" || typeof height !== "number"){
+              throw new TypeError("Wrong data type! Arguments should be only numbers.");
+          }else{
+              console.log(width * height);
+          }
+      }catch (error) {
+          console.log(error.stack);
+      }
+     }
+      calcRectangleArea(2, "a");
+  
+  // 
+  
+  class MonthException extends Error{
+      constructor(message){
+          super(message);
+          this.name = "MonthExceptio";
+          this.message = message;
+      }
+  }
+  let months = ["January", "February", "March", "April", "May", "June","Jule", "Augast", "September", "October", "November", "December" ];
+  
+  function shouwMonthName(month) {
+      try {
+          if (month > 12 || month < 1) {
+              throw new MonthException("Incorrect month number");
+          }
+          else if (typeof month !=="number"){
+              throw new MonthException("Incorrect provided date type");
+          }
+          else {
+              console.log(months[month - 1]);
+          }
+      } 
+      catch (error) {
+          console.log(error.stack);
+      }
+  }
+    shouwMonthName(5);
+     
+    
+  //   
+  
+  function showUser(id) {
+       if(id < 0) {
+          throw new Error ('ID must not be negative:n' + id);
        }
-    }
-    return resArr;
-}
-console.log(resArr);
-
-// 
-
-var randArray = [];
-for ( i = 0; i < 5; i++ ) {
-    randArray.push( Math.round( Math.random() * 499 ) + 1);
-} 
-console.log(randArray);
-
-// 
-
-const  arr3 = [5, "Limit", 12, "a", "3", 99, 2, [2, 4, 3, "33", "a", "text"], "strong", "broun"];
-
-function newArrays (arr3) {
-  const arr4 = [];
-  const arr5 = [];
-
-  const newArr3 = arr3.flat();
-
-  for (const i = 0; i < newArr3.length; i++) {
-    const el = newArr3[i];
-    if(typeof el === "number") {
-        arr4.push(el);
-    }
-    else if (typeof el === "string") {
-        arr5.push(el);
-    }
+       return {id};
   }
    
-  console.log(arr4);
-  console.log(arr5);
-}
-
-
-// 
-const date = new Date();
-const currentHour = date.getHours();
-
-    if (currentHour >= 23 && currentHour <= 5) {
-        alert ('Доброї ночі');
-    }
-    else if (currentHour >= 5 && currentHour <=11) {
-        alert ('Доброго ранку');
-    }
-    else if (currentHour >= 11 && currentHour <= 17) {
-        alert ('Доброго дня');
-    }
-    else if (currentHour >= 17 && currentHour <= 23) {
-        alert  ('Доброго вечора');
-    }
- 
-switch(true) {
-    case (currentHour >= 23 && currentHour <= 5):
-        alert ('Доброї ночі');
-        break;
-    case (currentHour > 5 && currentHour <= 11):
-        alert ('Доброго ранку');
-        break;
-    case (currentHour > 11 && currentHour <= 17):
-        alert ('Доброго дня');
-        break
-    case (currentHour > 17 && currentHour <= 23):
-        alert  ('Доброго вечора');     
-        break
-    }
- 
-
-    // 
+  function showUsers(ids) {
+      let res = [];
+      ids.map(function (id) {
+          try {
+              let person = showUser(id);
+              res.push(person);
+          }
+          catch (exception) {
+              console.log(exception.message);
+          }
+      });
+      return res;
+  }
+  showUsers([7, -12, 44, 22]);
+  
