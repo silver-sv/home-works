@@ -179,122 +179,278 @@
     // // // // // // //  task-4 // // // // // //
 
 
-    function sumSliceArray(arr, first, second){
-        try{
-          if (!(typeof first == 'number') || !(typeof second == 'number')) {
-              throw new Error ("not a number");
-          }
-          else if(first > arr.length || second > arr.length){
-              throw new RangeError("Numbers from arguments are bigger then array length");
-          }
-          else{
-              console.log(arr[first] + arr[second]);
-          }
-        }
-        catch (error){
-          console.log(error.stack);
-        }
+//     function sumSliceArray(arr, first, second){
+//         try{
+//           if (!(typeof first == 'number') || !(typeof second == 'number')) {
+//               throw new Error ("not a number");
+//           }
+//           else if(first > arr.length || second > arr.length){
+//               throw new RangeError("Numbers from arguments are bigger then array length");
+//           }
+//           else{
+//               console.log(arr[first] + arr[second]);
+//           }
+//         }
+//         catch (error){
+//           console.log(error.stack);
+//         }
           
-      }
-       sumSliceArray([1, 3, 5] , "ab", 3);
-      // 
+//       }
+//        sumSliceArray([1, 3, 5] , "ab", 3);
+//       // 
   
   
-      let userName = prompt("Enter your name");
-      let userAge = parseInt(prompt("Enter your age"));
-      let userStatus = prompt("Enter your status (admin, moderator, user)");
+//       let userName = prompt("Enter your name");
+//       let userAge = parseInt(prompt("Enter your age"));
+//       let userStatus = prompt("Enter your status (admin, moderator, user)");
       
-      function checkAge (userName, userAge, userStatus){
-          try{
-              if (isNaN(userAge)){
-                  throw new TypeError("Invalid age. You entered not a number is age field");
-              }
-              else if (userName === "" || userAge === 0 || userStatus === ""){
-                  throw new Error("The field is empty! Enter necessary informat");
-              }
-              else if (userStatus !== "admin" && userStatus !== "moderator" && userStatus !== "user"){
-                  throw new EvalError("Invalid status. Enter valid status (admin, moderator, user)");
-              }
-              else if (userAge < 18 || userAge >70){
-                  throw new RangeError("Your age is out of range");
-              }
-              else {
-                  alert("You can continue watching film");
-              }
-           }
-           catch (error){
-              console.log(error.stack);
-           }
-      } 
-       checkAge(userAge, userName, userStatus);
+//       function checkAge (userName, userAge, userStatus){
+//           try{
+//               if (isNaN(userAge)){
+//                   throw new TypeError("Invalid age. You entered not a number is age field");
+//               }
+//               else if (userName === "" || userAge === 0 || userStatus === ""){
+//                   throw new Error("The field is empty! Enter necessary informat");
+//               }
+//               else if (userStatus !== "admin" && userStatus !== "moderator" && userStatus !== "user"){
+//                   throw new EvalError("Invalid status. Enter valid status (admin, moderator, user)");
+//               }
+//               else if (userAge < 18 || userAge >70){
+//                   throw new RangeError("Your age is out of range");
+//               }
+//               else {
+//                   alert("You can continue watching film");
+//               }
+//            }
+//            catch (error){
+//               console.log(error.stack);
+//            }
+//       } 
+//        checkAge(userAge, userName, userStatus);
       
          
-  //    
+//   //    
   
-     function calcRectangleArea(width, height){
-      try{
-          if (typeof width !== "number" || typeof height !== "number"){
-              throw new TypeError("Wrong data type! Arguments should be only numbers.");
-          }else{
-              console.log(width * height);
-          }
-      }catch (error) {
-          console.log(error.stack);
-      }
-     }
-      calcRectangleArea(2, "a");
+//      function calcRectangleArea(width, height){
+//       try{
+//           if (typeof width !== "number" || typeof height !== "number"){
+//               throw new TypeError("Wrong data type! Arguments should be only numbers.");
+//           }else{
+//               console.log(width * height);
+//           }
+//       }catch (error) {
+//           console.log(error.stack);
+//       }
+//      }
+//       calcRectangleArea(2, "a");
   
-  // 
+//   // 
   
-  class MonthException extends Error{
-      constructor(message){
-          super(message);
-          this.name = "MonthExceptio";
-          this.message = message;
-      }
-  }
-  let months = ["January", "February", "March", "April", "May", "June","Jule", "Augast", "September", "October", "November", "December" ];
+//   class MonthException extends Error{
+//       constructor(message){
+//           super(message);
+//           this.name = "MonthExceptio";
+//           this.message = message;
+//       }
+//   }
+//   let months = ["January", "February", "March", "April", "May", "June","Jule", "Augast", "September", "October", "November", "December" ];
   
-  function shouwMonthName(month) {
-      try {
-          if (month > 12 || month < 1) {
-              throw new MonthException("Incorrect month number");
-          }
-          else if (typeof month !=="number"){
-              throw new MonthException("Incorrect provided date type");
-          }
-          else {
-              console.log(months[month - 1]);
-          }
-      } 
-      catch (error) {
-          console.log(error.stack);
-      }
-  }
-    shouwMonthName(5);
+//   function shouwMonthName(month) {
+//       try {
+//           if (month > 12 || month < 1) {
+//               throw new MonthException("Incorrect month number");
+//           }
+//           else if (typeof month !=="number"){
+//               throw new MonthException("Incorrect provided date type");
+//           }
+//           else {
+//               console.log(months[month - 1]);
+//           }
+//       } 
+//       catch (error) {
+//           console.log(error.stack);
+//       }
+//   }
+//     shouwMonthName(5);
      
     
-  //   
+//   //   
   
-  function showUser(id) {
-       if(id < 0) {
-          throw new Error ('ID must not be negative:n' + id);
-       }
-       return {id};
-  }
+//   function showUser(id) {
+//        if(id < 0) {
+//           throw new Error ('ID must not be negative:n' + id);
+//        }
+//        return {id};
+//   }
    
-  function showUsers(ids) {
-      let res = [];
-      ids.map(function (id) {
-          try {
-              let person = showUser(id);
-              res.push(person);
-          }
-          catch (exception) {
-              console.log(exception.message);
-          }
-      });
-      return res;
-  }
-  showUsers([7, -12, 44, 22]);
+//   function showUsers(ids) {
+//       let res = [];
+//       ids.map(function (id) {
+//           try {
+//               let person = showUser(id);
+//               res.push(person);
+//           }
+//           catch (exception) {
+//               console.log(exception.message);
+//           }
+//       });
+//       return res;
+//   }
+//   showUsers([7, -12, 44, 22]);
   
+
+ // // // // // // //  task-5 // // // // // //
+
+ class Circle {
+    constructor(cx, cy, r) {
+      this.cx = cx;
+      this.cy = cy;
+      this.r = r;
+    }
+    static computeL(r) {
+      return r * Math.PI * 2;
+    }
+    static create(cx, cy, r) {
+      const c = new Circle(cx, cy, r);
+      return c;
+    }
+    copy() {
+      return Circle.create(this.cx, this.cy, this.r);
+    }
+    isIn(x, y) {
+      return Math.sqrt((x - this.cx) * 2 + (y - this.cy) * 2) < this.r;
+    }
+    toString() {
+      return JSON.stringify(this);
+    }
+  }
+  const a = new Circle(5, 5, 8);
+  const b = a.copy();
+  const c = Circle.create(5, 5, 8);
+  console.log(c.isIn(5, 12.5));
+  console.log(Circle.computeL(b.r));
+  console.log(c.toString())
+
+
+  // 
+
+  function propsCount(currentObject){
+    return Object.keys(currentObject).length;
+  }
+
+// 
+
+  class Person {
+    constructor(name, surname){
+      this.name = name;
+      this.surname = surname;
+    }
+    getFullName(){
+      return `${this.surname} ${this.name}`;
+    }
+  } 
+  class Student extends Person {
+    constructor(name, surname, year){
+      super(name, surname);
+      this.year = year;
+    }
+    getFullName(middleName){
+      return `${this.surname} ${this.name} ${middleName}`;
+    }
+    getCourse(){
+      const currentYear = new Date().getFullYear();
+      return currentYear - this.year + 1;
+    }
+  }
+
+
+  // 
+
+  class Marker{
+    #color;
+    #inkLevel;
+    #inkPerSymbol;
+    static maxInkLevel = 100;
+    static inkPerSymbol = 10;
+
+    constructor(color){
+      this.#color = color;
+      this.#inkLevel = Marker.maxInkLevel;
+    }
+    get color(){
+      return this.#color;
+    }
+    get ink(){
+      return this.#inkLevel;
+    }
+    _setInk(inkLevel){
+      this.#inkLevel = inkLevel;
+    }
+    print(text){
+      let index = 0;
+      while (this.#inkLevel >= Marker.inkPerSymbol && index < text.length){
+        let letter = text[index];
+        console.log(text[index]);
+        if (letter.trim() !== ""){
+          this.#inkLevel -= Marker.inkPerSymbol;
+        }
+        index++;
+      }
+    }
+  }
+  
+  class RefillableMarker extends Marker{
+    refill(){
+      this._setInk(Marker.maxInkLevel);
+    }
+  }
+
+  // 
+
+  class Worker{
+    #fullName;
+    #dayRate;
+    #workingDays;
+    #experience;
+
+    constructor(fullName, dayRate, workingDays, experience){
+      this.#fullName = fullName;
+      this.dayRate = dayRate;
+      this.#workingDays = workingDays;
+      this.#experience = experience;
+    }
+    getSalary() {
+      return this.#dayRate * this.#workingDays;
+    }
+    getSalaryWithExperience(){
+      return this.#dayRate * this.#workingDays * this.#experience;
+    }
+    get fullName(){
+      return this.#fullName;
+    }
+    set fullName(value){
+      this.#fullName = value;
+    }
+    get dayRate(){
+      return this.#dayRate;
+    }
+    set dayRate(value){
+      this.#dayRate = value;
+    }
+    get experience(){
+      return this.#experience;
+    }
+    set experience(value){
+      this.#experience = value;
+    }
+    get workingDays(){
+      return this.#workingDays;
+    }
+    addWorkingDays(n){
+      this.#workingDays += n;
+    }
+
+    static sortBySalary(workers){
+      return [...workers].sort((a, b) => a.getSalary() - b.getSalary());
+    }
+  } 
