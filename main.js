@@ -301,156 +301,284 @@
 
  // // // // // // //  task-5 // // // // // //
 
- class Circle {
-    constructor(cx, cy, r) {
-      this.cx = cx;
-      this.cy = cy;
-      this.r = r;
-    }
-    static computeL(r) {
-      return r * Math.PI * 2;
-    }
-    static create(cx, cy, r) {
-      const c = new Circle(cx, cy, r);
-      return c;
-    }
-    copy() {
-      return Circle.create(this.cx, this.cy, this.r);
-    }
-    isIn(x, y) {
-      return Math.sqrt((x - this.cx) * 2 + (y - this.cy) * 2) < this.r;
-    }
-    toString() {
-      return JSON.stringify(this);
-    }
-  }
-  const a = new Circle(5, 5, 8);
-  const b = a.copy();
-  const c = Circle.create(5, 5, 8);
-  console.log(c.isIn(5, 12.5));
-  console.log(Circle.computeL(b.r));
-  console.log(c.toString())
+//  class Circle {
+//     constructor(cx, cy, r) {
+//       this.cx = cx;
+//       this.cy = cy;
+//       this.r = r;
+//     }
+//     static computeL(r) {
+//       return r * Math.PI * 2;
+//     }
+//     static create(cx, cy, r) {
+//       const c = new Circle(cx, cy, r);
+//       return c;
+//     }
+//     copy() {
+//       return Circle.create(this.cx, this.cy, this.r);
+//     }
+//     isIn(x, y) {
+//       return Math.sqrt((x - this.cx) * 2 + (y - this.cy) * 2) < this.r;
+//     }
+//     toString() {
+//       return JSON.stringify(this);
+//     }
+//   }
+//   const a = new Circle(5, 5, 8);
+//   const b = a.copy();
+//   const c = Circle.create(5, 5, 8);
+//   console.log(c.isIn(5, 12.5));
+//   console.log(Circle.computeL(b.r));
+//   console.log(c.toString())
 
 
-  // 
+//   // 
 
-  function propsCount(currentObject){
-    return Object.keys(currentObject).length;
-  }
+//   function propsCount(currentObject){
+//     return Object.keys(currentObject).length;
+//   }
 
-// 
+// // 
 
-  class Person {
-    constructor(name, surname){
-      this.name = name;
-      this.surname = surname;
-    }
-    getFullName(){
-      return `${this.surname} ${this.name}`;
-    }
-  } 
-  class Student extends Person {
-    constructor(name, surname, year){
-      super(name, surname);
-      this.year = year;
-    }
-    getFullName(middleName){
-      return `${this.surname} ${this.name} ${middleName}`;
-    }
-    getCourse(){
-      const currentYear = new Date().getFullYear();
-      return currentYear - this.year + 1;
-    }
-  }
+//   class Person {
+//     constructor(name, surname){
+//       this.name = name;
+//       this.surname = surname;
+//     }
+//     getFullName(){
+//       return `${this.surname} ${this.name}`;
+//     }
+//   } 
+//   class Student extends Person {
+//     constructor(name, surname, year){
+//       super(name, surname);
+//       this.year = year;
+//     }
+//     getFullName(middleName){
+//       return `${this.surname} ${this.name} ${middleName}`;
+//     }
+//     getCourse(){
+//       const currentYear = new Date().getFullYear();
+//       return currentYear - this.year + 1;
+//     }
+//   }
 
 
-  // 
+//   // 
 
-  class Marker{
-    #color;
-    #inkLevel;
-    #inkPerSymbol;
-    static maxInkLevel = 100;
-    static inkPerSymbol = 10;
+//   class Marker{
+//     #color;
+//     #inkLevel;
+//     #inkPerSymbol;
+//     static maxInkLevel = 100;
+//     static inkPerSymbol = 10;
 
-    constructor(color){
-      this.#color = color;
-      this.#inkLevel = Marker.maxInkLevel;
-    }
-    get color(){
-      return this.#color;
-    }
-    get ink(){
-      return this.#inkLevel;
-    }
-    _setInk(inkLevel){
-      this.#inkLevel = inkLevel;
-    }
-    print(text){
-      let index = 0;
-      while (this.#inkLevel >= Marker.inkPerSymbol && index < text.length){
-        let letter = text[index];
-        console.log(text[index]);
-        if (letter.trim() !== ""){
-          this.#inkLevel -= Marker.inkPerSymbol;
-        }
-        index++;
-      }
-    }
-  }
+//     constructor(color){
+//       this.#color = color;
+//       this.#inkLevel = Marker.maxInkLevel;
+//     }
+//     get color(){
+//       return this.#color;
+//     }
+//     get ink(){
+//       return this.#inkLevel;
+//     }
+//     _setInk(inkLevel){
+//       this.#inkLevel = inkLevel;
+//     }
+//     print(text){
+//       let index = 0;
+//       while (this.#inkLevel >= Marker.inkPerSymbol && index < text.length){
+//         let letter = text[index];
+//         console.log(text[index]);
+//         if (letter.trim() !== ""){
+//           this.#inkLevel -= Marker.inkPerSymbol;
+//         }
+//         index++;
+//       }
+//     }
+//   }
   
-  class RefillableMarker extends Marker{
-    refill(){
-      this._setInk(Marker.maxInkLevel);
-    }
-  }
+//   class RefillableMarker extends Marker{
+//     refill(){
+//       this._setInk(Marker.maxInkLevel);
+//     }
+//   }
 
-  // 
+//   // 
 
-  class Worker{
-    #fullName;
-    #dayRate;
-    #workingDays;
-    #experience;
+//   class Worker{
+//     #fullName;
+//     #dayRate;
+//     #workingDays;
+//     #experience;
 
-    constructor(fullName, dayRate, workingDays, experience){
-      this.#fullName = fullName;
-      this.dayRate = dayRate;
-      this.#workingDays = workingDays;
-      this.#experience = experience;
-    }
-    getSalary() {
-      return this.#dayRate * this.#workingDays;
-    }
-    getSalaryWithExperience(){
-      return this.#dayRate * this.#workingDays * this.#experience;
-    }
-    get fullName(){
-      return this.#fullName;
-    }
-    set fullName(value){
-      this.#fullName = value;
-    }
-    get dayRate(){
-      return this.#dayRate;
-    }
-    set dayRate(value){
-      this.#dayRate = value;
-    }
-    get experience(){
-      return this.#experience;
-    }
-    set experience(value){
-      this.#experience = value;
-    }
-    get workingDays(){
-      return this.#workingDays;
-    }
-    addWorkingDays(n){
-      this.#workingDays += n;
-    }
+//     constructor(fullName, dayRate, workingDays, experience){
+//       this.#fullName = fullName;
+//       this.dayRate = dayRate;
+//       this.#workingDays = workingDays;
+//       this.#experience = experience;
+//     }
+//     getSalary() {
+//       return this.#dayRate * this.#workingDays;
+//     }
+//     getSalaryWithExperience(){
+//       return this.#dayRate * this.#workingDays * this.#experience;
+//     }
+//     get fullName(){
+//       return this.#fullName;
+//     }
+//     set fullName(value){
+//       this.#fullName = value;
+//     }
+//     get dayRate(){
+//       return this.#dayRate;
+//     }
+//     set dayRate(value){
+//       this.#dayRate = value;
+//     }
+//     get experience(){
+//       return this.#experience;
+//     }
+//     set experience(value){
+//       this.#experience = value;
+//     }
+//     get workingDays(){
+//       return this.#workingDays;
+//     }
+//     addWorkingDays(n){
+//       this.#workingDays += n;
+//     }
 
-    static sortBySalary(workers){
-      return [...workers].sort((a, b) => a.getSalary() - b.getSalary());
+//     static sortBySalary(workers){
+//       return [...workers].sort((a, b) => a.getSalary() - b.getSalary());
+//     }
+//   } 
+
+ // // // // // // //  task-6 // // // // // //
+
+ 1
+
+const list = document.getElementById("list")
+const items = list.getElementsByTagName('li');
+const firstItem = items[0].textContent;
+  const lastItem = items[items.length - 1].textContent;
+  const secondItem = items[1].textContent;
+  const fourthItem = items[3].textContent;
+  const thirdItem = items[2].textContent;
+
+alert(firstItem);
+alert(lastItem);
+alert(secondItem);
+alert(fourthItem);
+alert(thirdItem);
+
+
+
+2
+
+document.body.children[0].style.backgroundColor = "lightgreen";
+document.getElementById("myDiv").children[0].style.fontWeight = "700";
+document.getElementById("myDiv").children[1].style.color = "red";
+document.getElementById("myDiv").children[2].style.textDecoratin = "underline";
+document.getElementById("myDiv").children[3].style.fontStyle = "italic";
+document.getElementById("myList").style.listStylen = "none";
+document.getElementById("myList").style.display = "flex";
+document.getElementsByTagName("span")[0].style.display = "none";
+
+
+3
+
+
+let body = document.createElement('body');
+let main = document.createElement('main');
+main.setAttribute('class', 'mainClass check item');
+let div = document.createElement('div');
+div.setAttribute('id', 'myDiv');
+let p = document.createElement('p');
+let textNode = document.createTextNode('First paragraph');
+
+p.appendChild(textNode);
+
+div.appendChild(p);
+main.appendChild(div);
+body.appendChild(main);
+
+document.documentElement.appendChild(body);
+
+4
+
+const fullName = document.getElementById('fullName');
+const phoneInput = document.getElementById('phoneInput');
+const birthdayInput = document.getElementById('birthdayInput');
+const emailInput = document.getElementById('emailInput');
+
+const btn = document.querySelector(".btn");
+const outBlock = document.querySelector(".out");
+
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const fullNameValue = fullName.value;
+  const phoneInputValue = phoneInput.value;
+  const birthdayInputValue = birthdayInput.value;
+  const emailInputValue = emailInput.value;
+
+  outBlock.textContent = `
+  ПІБ: ${fullNameValue},
+  Номер телефону: ${phoneInputValue},
+  Дата народження: ${birthdayInputValue},
+  Електронна пошта: ${emailInputValue}`;
+
+  fullName.value = "";
+  phoneInput.value = "";
+  birthdayInput.value = "";
+  emailInput.value = "";
+});
+ 
+
+// 5
+
+const circle = document.querySelectorAll(".circle");
+let circleValue;
+
+const newCircle = Array.from(circle).map((item) => {
+  circleValue = item.getAttribute("data-anim");
+  item.classList.add(circleValue);
+});
+
+circle.forEach((item) => {
+  const animation = item.classList.contains(circleValue);
+  console.log(`Animation applied: ${animation}`);
+});
+
+
+ 6
+
+let price = 189.99;
+const colorButtons = document.querySelectorAll(".color");
+const priceElement = document.querySelector(".price h1");
+
+function updatePrice (newPrice){
+  priceElement.textContent = newPrice.toFixed(2);
+}
+colorButtons.forEach((button) => {
+  button.addEventListener('click', function(){
+    const selectedColor = this.getAttribute('color');
+    if (selectedColor === 'blue'){
+      price = 189.99;
     }
-  } 
+    else if (selectedColor === 'red'){
+      price = 199.99;
+    }
+    else if (selectedColor === 'green'){
+      price = 209.99;
+    }
+    else if (selectedColor === "orange"){
+      price = 219.99;
+    }
+    else if (selectedColor === 'black'){
+      price = 229.99;
+    }
+    updatePrice(price);
+  });
+});
