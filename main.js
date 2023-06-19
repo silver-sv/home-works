@@ -669,3 +669,100 @@ button.addEventListener("mouseover", function() {
 button.addEventListener("mouseout", function() {
   alert("Mouse is not on me!");
 });
+
+// // // // // // //  task-8 // // // // // //
+
+1
+
+const upperCase = (str) =>{
+  const successString = "String's starts with uppercase character";
+  const failString = "String's not starts with uppercase character";
+  const regex = /^[A-Z]/;
+  return regex.test(str) ? successString : failString
+}
+
+// 
+
+2
+
+function validateEmail(email) {
+  let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return pattern.test(email);
+}
+
+// 
+
+3
+
+let regex = /(\S+)\s+(\S+)/;
+
+// 
+
+4
+
+let regex = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
+
+// 
+
+5
+
+function checkEmail(email) {
+  let pattern = /^[a-zA-Z0-9]+([_-]?[a-zA-Z0-9]+)*@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
+}
+
+// 
+
+6
+
+function checkLogin(login){
+  let loginPattern = /^[a-zA-Z][a-zA-Z0-9.]{1,9}$/;
+  let isValid = loginPattern.test(login);
+  let numbers = login.match(/[-+]?[0-9]*\.?[0-9]+/g) || [];
+  return {isValid, numbers}
+}
+
+// 
+// // // // // // //  task-9 // // // // // //
+
+ 1
+
+let headers = document.querySelectorAll("h2.head");
+
+headers.forEach(function(header) {
+  header.style.backgroundColor = "green";
+
+let innerElements = header.querySelectorAll(".inner");
+  
+  innerElements.forEach(function(inner) {
+    inner.style.fontSize = "35px";
+  });
+});
+ 
+// 
+
+2
+
+$("a[href^='https://']").attr('target', '_blank');
+
+// 
+
+3
+
+$('h3 +div').each(function(){
+  const $divElems = $(this);
+  console.log(this);
+  $divElems.prev().before($divElems);
+});
+
+// 
+
+4
+
+const $checkboxes = $(':checkbox');
+$checkboxes.on('click', function(){
+  if ($(':checkbox:checked').length == 3){
+    $checkboxes.attr('disabled', 'true');
+  }
+});
+
+// 
