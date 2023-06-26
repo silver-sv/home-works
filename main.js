@@ -891,3 +891,60 @@ for (var i = 0; i <= 2; i++) {
 
 arr[0](); // 0
 arr[arr.length - 1](); // 2
+
+
+// ////////////////// task-11//////////////////////
+
+// 1
+
+function getPromise(message, delay) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(message), delay)
+  });
+}
+  
+// 
+2
+
+function calcArrProduct(arr) {
+  return new Promise((resolve, reject) => {
+    const isValid = arr.every((num) => typeof num === "number");
+
+    if (isValid) {
+      const product = arr.reduce((accumulator, current) => accumulator * current, 1);
+      resolve(product);
+    } else {
+      reject("Error! Incorrect array!");
+    }
+  });
+}
+
+// 
+3
+
+new Promise(function (resolve, reject) {
+  let number = +prompt()
+  if (isNaN(number)) reject()
+  else resolve(number)
+}).catch(function (error) {
+  return new Promise(function (resolve, reject) {
+    let number
+    while (isNaN(number)) {
+      number = +prompt()
+    }
+    resolve(number)
+  });
+}).then(function(result){
+  console.log(result)
+});
+
+ // 
+ 4
+
+ const delay = (i, time) => new Promise(resolve => setTimeout(() => resolve(i), time));
+ async function showNumbers(){
+  for (let i in delays){
+    console.log(await delay(i,  delay[i]));
+  }
+}
+showNumbers();
